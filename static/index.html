@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>反向代理演示</title>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+	<div class="container">
+		<h1>反向代理负载均衡演示</h1>
+		
+		<div class="input-section">
+			<textarea id="messageInput" placeholder="请输入要发送的消息..."></textarea>
+			<div class="controls">
+				<select id="serverSelect">
+					<option value="8081">服务器 8081</option>
+					<option value="8082">服务器 8082</option>
+				</select>
+				<button onclick="sendMessage()">发送</button>
+			</div>
+		</div>
+
+		<div class="history-section">
+			<h2>通信历史</h2>
+			<div id="messageHistory"></div>
+		</div>
+	</div>
+	<script src="/static/script.js"></script>
+</body>
+</html>
