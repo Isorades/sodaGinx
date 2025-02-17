@@ -2,6 +2,11 @@
 
 这是一个简单的反向代理负载均衡演示项目，包含前端页面和后端服务。
 
+具体博客文章见[深入浅出反向代理：从原理应用到代码示例](https://soda.dnggentle.art/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%BB%8E%E5%8E%9F%E7%90%86%E5%BA%94%E7%94%A8%E5%88%B0%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B/)
+
+
+![效果图](static/示例.png)
+
 ## 项目结构
 ```
 /reverse-proxy-demo
