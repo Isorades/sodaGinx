@@ -1,4 +1,17 @@
-// 用于动态更新计算历史
+// 反向代理与负载均衡教学示例：前端脚本
+// 本脚本负责与代理服务器通信，发送消息并动态展示响应历史
+// 相关知识点：fetch API、DOM 操作、异步编程
+//
+// 教学要点：
+// 1. 如何用 fetch 发送 POST 请求到代理服务器
+// 2. 如何处理 JSON 响应并更新页面内容
+// 3. 如何动态维护通信历史
+//
+// 练习：
+// - 增加错误处理，体验异常场景
+// - 扩展历史记录展示内容
+
+// 用于动态更新历史记录
 function updateHistory(result, server) {
     const historyList = document.getElementById("history");
     const newItem = document.createElement("li");
@@ -35,6 +48,7 @@ async function sendMessage() {
     }
 
     try {
+        // 通过代理API发送POST请求
         const response = await fetch(`/api/server${server}`, {
             method: 'POST',
             headers: {
@@ -43,6 +57,7 @@ async function sendMessage() {
             body: JSON.stringify({ message: message }),
         });
 
+        // 解析JSON响应
         const data = await response.json();
         addMessageToHistory(message, data.response, server);
         document.getElementById('messageInput').value = '';
@@ -52,6 +67,7 @@ async function sendMessage() {
     }
 }
 
+// 动态添加历史记录到页面
 function addMessageToHistory(message, response, server) {
     const historyDiv = document.getElementById('messageHistory');
     const timestamp = new Date().toLocaleString();
